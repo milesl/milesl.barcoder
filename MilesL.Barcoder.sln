@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesL.Barcoder.App", "MilesL.Barcoder.App\MilesL.Barcoder.App.csproj", "{07A5352E-E64D-4BEC-8499-689BAC95104C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesL.Barcoder.Api", "MilesL.Barcoder.Api\MilesL.Barcoder.Api.csproj", "{46995D41-D4DA-46B1-853A-78D1B525EF8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BB241152-FF45-49C5-8881-E80761275D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesL.Barcoder.Api.Tests", "MilesL.Barcoder.Api.Tests\MilesL.Barcoder.Api.Tests.csproj", "{3A526496-225C-41CA-BF65-4E7CC65FB3CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesL.Barcoders.App.Tests", "MilesL.Barcoders.App.Tests\MilesL.Barcoders.App.Tests.csproj", "{607453AF-04FF-4A94-81D7-BE76E93EE3B5}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MilesL.Barcoders.Database", "MilesL.Barcoders.Database\MilesL.Barcoders.Database.sqlproj", "{1084CC76-45E9-4227-A3F6-951706E4A100}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07A5352E-E64D-4BEC-8499-689BAC95104C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A5352E-E64D-4BEC-8499-689BAC95104C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A5352E-E64D-4BEC-8499-689BAC95104C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A5352E-E64D-4BEC-8499-689BAC95104C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46995D41-D4DA-46B1-853A-78D1B525EF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46995D41-D4DA-46B1-853A-78D1B525EF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46995D41-D4DA-46B1-853A-78D1B525EF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46995D41-D4DA-46B1-853A-78D1B525EF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A526496-225C-41CA-BF65-4E7CC65FB3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A526496-225C-41CA-BF65-4E7CC65FB3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A526496-225C-41CA-BF65-4E7CC65FB3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A526496-225C-41CA-BF65-4E7CC65FB3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607453AF-04FF-4A94-81D7-BE76E93EE3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607453AF-04FF-4A94-81D7-BE76E93EE3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607453AF-04FF-4A94-81D7-BE76E93EE3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607453AF-04FF-4A94-81D7-BE76E93EE3B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1084CC76-45E9-4227-A3F6-951706E4A100}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A526496-225C-41CA-BF65-4E7CC65FB3CF} = {BB241152-FF45-49C5-8881-E80761275D64}
+		{607453AF-04FF-4A94-81D7-BE76E93EE3B5} = {BB241152-FF45-49C5-8881-E80761275D64}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62C64EE3-03E2-4044-A3D9-33DBB77C18C0}
+	EndGlobalSection
+EndGlobal

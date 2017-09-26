@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Barcodes]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Message] NVARCHAR(MAX) NOT NULL, 
+    [Format] NVARCHAR(50) NOT NULL, 
+    [DateScanned] DATETIME NOT NULL DEFAULT(GETDATE())
+)
