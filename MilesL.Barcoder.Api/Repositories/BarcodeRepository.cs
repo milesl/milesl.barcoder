@@ -6,6 +6,7 @@ using Dapper;
 using System.Collections.Generic;
 using MilesL.Barcoder.Api.Models.Interfaces;
 using MilesL.Barcoder.Api.Models;
+using System.Threading.Tasks;
 
 namespace MilesL.Barcoder.Api.Repositories
 {
@@ -32,9 +33,11 @@ namespace MilesL.Barcoder.Api.Repositories
         /// Method for retrieving a list of all barcodes
         /// </summary>
         /// <returns>A collection of barcodes</returns>
-        public IEnumerable<IBarcode> GetBarcodes()
+        public async Task<IEnumerable<IBarcode>> GetBarcodes()
         {
-            return this.connection.Query<Barcode>(StoredProcedures.GetBarcodes,commandType: CommandType.StoredProcedure).ToList();
+            var result = await this.connection.QueryAsync<Barcode>(StoredProcedures.GetBarcodes, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+
         }
 
         /// <summary>
@@ -42,9 +45,10 @@ namespace MilesL.Barcoder.Api.Repositories
         /// </summary>
         /// <param name="barcode">A implementation of <see cref="IBarcode"/> interface</param>
         /// <returns>A implementation of <see cref="IBarcode"/> interface</returns>
-        public IBarcode AddBarcode(IBarcode barcode)
+        public async Task<IBarcode> AddBarcode(IBarcode barcode)
         {
-            return this.connection.Query<Barcode>(StoredProcedures.AddBarcodes, new { message = barcode.Message, format = barcode.Format}, commandType: CommandType.StoredProcedure).Single();
+            var result = await this.connection.QueryAsync<Barcode>(StoredProcedures.AddBarcodes, new { message = barcode.Message, format = barcode.Format }, commandType: CommandType.StoredProcedure);
+            return result.FirstOrDefault();
         }
 
         /// <summary>

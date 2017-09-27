@@ -35,6 +35,7 @@ namespace MilesL.Barcoder.Api.Controllers
         public BarcodeController(IBarcodeService barcodeService, IMapper mapper)
         {
             this.barcodeService = barcodeService;
+            this.mapper = mapper;
         }
 
         /// <summary>
@@ -42,10 +43,18 @@ namespace MilesL.Barcoder.Api.Controllers
         /// </summary>
         /// <returns>A collection of barcodes</returns>
         [HttpGet]
-        public IEnumerable<BarcodeViewModel> Get()
+        public async Task<IEnumerable<BarcodeViewModel>> Get()
         {
-            var barcodes = this.barcodeService.GetBarcodes();
-            return this.mapper.Map<List<BarcodeViewModel>>(barcodes);
+            try
+            {
+                var barcodes = await this.barcodeService.GetBarcodes();
+                return this.mapper.Map<List<BarcodeViewModel>>(barcodes);
+            }
+            catch (Exception ex)
+            {
+                // log ex to app insights rather than throw
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -53,10 +62,19 @@ namespace MilesL.Barcoder.Api.Controllers
         /// </summary>
         /// <param name="barcode">A instance of a barcode</param>
         [HttpPost]
-        public void Post([FromBody]BarcodeViewModel barcode)
+        public async Task<BarcodeViewModel> Post([FromBody]BarcodeViewModel barcode)
         {
-            var barcodeToAdd = this.mapper.Map<IBarcode>(barcode);
-            this.barcodeService.AddBarcode(barcodeToAdd);
+            try
+            {
+                var barcodeToAdd = this.mapper.Map<IBarcode>(barcode);
+                barcodeToAdd = await this.barcodeService.AddBarcode(barcodeToAdd);
+                return this.mapper.Map<BarcodeViewModel>(barcodeToAdd);
+            }
+            catch (Exception ex)
+            {
+                // log ex to app insights rather than throw
+                throw ex;
+            }
         }
     }
 }

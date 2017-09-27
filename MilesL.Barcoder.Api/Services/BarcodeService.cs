@@ -31,9 +31,10 @@ namespace MilesL.Barcoder.Api.Services
         /// Method for retrieving a list of all barcodes
         /// </summary>
         /// <returns>A collection of barcodes</returns>
-        public IBarcode AddBarcode(IBarcode barcode)
+        public async Task<IBarcode> AddBarcode(IBarcode barcode)
         {
-            return this.barcodeRepository.AddBarcode(barcode);
+            var result = await this.barcodeRepository.AddBarcode(barcode);
+            return result;
         }
 
         /// <summary>
@@ -41,9 +42,10 @@ namespace MilesL.Barcoder.Api.Services
         /// </summary>
         /// <param name="barcode">A implementation of <see cref="IBarcode"/> interface</param>
         /// <returns>A implementation of <see cref="IBarcode"/> interface</returns>
-        public IEnumerable<IBarcode> GetBarcodes()
+        public async Task<IEnumerable<IBarcode>> GetBarcodes()
         {
-            return this.barcodeRepository.GetBarcodes();
+            var result = await this.barcodeRepository.GetBarcodes();
+            return result;
         }
     }
 }

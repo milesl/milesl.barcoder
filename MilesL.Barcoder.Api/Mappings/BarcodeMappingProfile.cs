@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MilesL.Barcoder.Api.Models;
 using MilesL.Barcoder.Api.Models.Interfaces;
 using MilesL.Barcoder.Api.ViewModels;
 
@@ -10,7 +11,7 @@ namespace MilesL.Barcoder.Api.Mappings
         {
             // Add as many of these lines as you need to map your objects
             CreateMap<IBarcode, BarcodeViewModel>();
-            CreateMap<BarcodeViewModel, IBarcode>();
+            CreateMap<BarcodeViewModel, IBarcode>().As<Barcode>();
         }
     }
 }

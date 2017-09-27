@@ -11,7 +11,7 @@ namespace MilesL.Barcoder.Api.Models
         /// <summary>
         /// Gets or sets the Id for the barcode
         /// </summary>
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Gets or sets the message for the barcode
@@ -26,6 +26,6 @@ namespace MilesL.Barcoder.Api.Models
         /// <summary>
         /// Gets or sets the date scanned for the barcode
         /// </summary>
-        public DateTime DateScanned { get; set; }
+        public DateTime? DateScanned { get; set; }
     }
 }
